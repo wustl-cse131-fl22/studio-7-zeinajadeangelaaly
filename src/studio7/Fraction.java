@@ -6,6 +6,7 @@ public class Fraction {
 	private int numerator;
 	private int denominator;
 	
+	
 	public Fraction(int numerator, int denominator) {
 		numerator = 0;
 		denominator = 0;
@@ -37,21 +38,25 @@ public class Fraction {
 		System.out.println("what is the fraction?");
 		int numerator1 = in.nextInt();
 		int denominator1 = in.nextInt();
-		System.out.println("what is the second fraction?");
-		int numerator2 = in.nextInt();
-		int denominator2 = in.nextInt();
-		
+		Fraction fraction1 = new Fraction(numerator1, denominator1);
 		System.out.println("type of operation: 1.add 2.multiply 3.reciprocal 4.simpilfy");
 		int Operation = in.nextInt();
 		if(Operation == 1) {
-			addFunction(numerator1, denominator1, numerator2, numerator2);
+			System.out.println("what is the second fraction?");
+			int numerator2 = in.nextInt();
+			int denominator2 = in.nextInt();
+			fraction1.addFraction(numerator1, denominator1, numerator2, denominator2);
 		}else if(Operation == 2) {
-			multiFunction(numerator1, denominator1, numerator2, numerator2);
+			System.out.println("what is the second fraction?");
+			int numerator2 = in.nextInt();
+			int denominator2 = in.nextInt();
+			fraction1.multiFraction(numerator1, denominator1, numerator2, denominator2);
 		}else if(Operation == 3) {
-			recFunction(numerator1, denominator1);
+			fraction1.recFraction(numerator1, denominator1);
 		}else if(Operation == 4) {
-			simpFunction(numerator1, denominator1);
+			fraction1.simpFraction(numerator1, denominator1);
 		}
-		System.out.println();
+		System.out.println(fraction1.toString());
 	}
+	
 }
